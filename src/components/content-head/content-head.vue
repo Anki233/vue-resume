@@ -8,15 +8,30 @@
         <slot name="des" />
       </h1>
     </div>
-
     <h6>
       <slot name="calc" />
     </h6>
+    <my-icon class="quit" id="icon-tuichu" size="35" v-if="showStatus" @click="quit()"></my-icon>
   </div>
 </template>
 
 <script>
-export default {};
+import { computed } from 'vue';
+import { useRouter } from 'vue-router'
+export default {
+  setup() {
+    const router = useRouter()
+    const showStatus = computed(() => {
+      const { path } = router.currentRoute.value
+      return path === '/' ? false :true
+    })
+    const quit = (lev = -1) => router.go(lev)
+    return {
+      showStatus,
+      quit
+    }
+  }
+};
 </script>
 
 <style scoped>
