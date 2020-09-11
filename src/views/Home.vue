@@ -7,11 +7,13 @@
 
       <div class="w-100">
         <content-head>
-          <template #title>I'M</template> 
-          <template #des>Mark</template> 
-          <template #calc>您已被赞300次</template> 
+          <template #title>{{title}}</template>
+          <template #des>{{des}}</template>
+          <template #calc>您已被赞300次</template>
         </content-head>
-        <router-view></router-view>
+        <transition enter-active-class="animate__animated animate__zoomIn">
+          <router-view></router-view>
+        </transition>
       </div>
       <userProfile :src="src" />
     </div>
@@ -19,6 +21,7 @@
 </template>
 
 <script>
+import { pathToSign } from "@/lib/router-lib.js"
 import userProfile from "@/components/user-profile/user-profile.vue";
 import slideBar from "@/components/slide-bar/slide-bar.vue";
 import contentHead from "@/components/content-head/content-head.vue";
@@ -31,8 +34,35 @@ export default {
     contentHead,
   },
   setup() {
+    // const router = useRouter();
+    // const title = ref("I'M");
+    // const des = ref("");
+    // watch(
+    //   router.currentRoute,
+    //   ({ path, name }) => {
+    //     const condition = path === "/" ? "I'M" : "";
+    //     title.value = condition;
+
+    //     const condition2 = path === "/" ? "Mark" : name;
+    //     des.value = condition2;
+    //   },
+    //   {
+    //     immediate: true,
+    //   }
+    // );
+    // watchEffect(() => {
+    //   const { path, name } = router.currentRoute.value;
+    //   const condition = path === "/" ? "I'M" : "";
+    //   title.value = condition;
+
+    //   const condition2 = path === "/" ? "Mark" : name;
+    //   des.value = condition2;
+    // });
+    const { title ,des} = pathToSign()
     return {
       src: require("../assets/img/wr-user.jpg"),
+      title,
+      des,
     };
   },
 };

@@ -1,16 +1,21 @@
 export const childrenRoute = [
     {
       path: '',
-      name: "About",
+      name: "Default",
       component: () => import("../views/Default.vue")
     },
     {
-      path: '',
+      path: '/About',
+      name: "About",
+      component: () => import("../views/About.vue")
+    },
+    {
+      path: '/Resume',
       name: "Resume",
       component: () => import("../views/Resume.vue")
     },
     {
-      path: '',
+      path: '/Portfolio',
       name: "Portfolio",
       component: () => import("../views/Portfolio.vue")
     }

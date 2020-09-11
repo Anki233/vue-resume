@@ -16,18 +16,18 @@ git clone https://github.com/Anki233/vue-resume.git
 
 #### 通过`npm`安装本地服务第三方依赖模块(需要已安装[Node.js](https://nodejs.org/))
 
-```
+```shell
 npm install
 ```
 
 #### 启动服务(http://localhost:8080)
 
-```
+```shell
 npm run serve
 ```
 
 #### 发布代码
 
-```
+```shell
 npm run build
 ```
