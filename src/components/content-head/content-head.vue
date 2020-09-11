@@ -8,9 +8,10 @@
         <slot name="des" />
       </h1>
     </div>
-    <div>
+
+    <h6>
       <slot name="calc" />
-    </div>
+    </h6>
   </div>
 </template>
 
@@ -27,12 +28,22 @@ export default {};
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
+
 .content-head > div {
   display: flex;
 }
+
 .content-head > div > h1:nth-child(2) {
   color: rgb(6, 255, 247);
   margin-left: 10px;
+}
+
+.quit {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
 }
 </style>

@@ -1,13 +1,13 @@
 <template>
-  <div>resume</div>
+  <div class="resume">Resume</div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
-<style>
-
+<style scoped>
+.resume {
+  color: white;
+}
 </style>

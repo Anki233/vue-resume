@@ -2,7 +2,7 @@
   <div>
     <my-icon :id="iconId" :color="iconColor" :size="iconSize" class="network"></my-icon>
     <div class="text">
-        <slot />
+      <slot />
     </div>
   </div>
 </template>
@@ -12,17 +12,17 @@ export default {
   props: {
     iconId: {
       type: String,
-      default: "",
+      default: ""
     },
     iconColor: {
       type: String,
-      default: "",
+      default: ""
     },
     iconSize: {
-      type: [Number,String],
-      default: 40,
+      type: [Number, String],
+      default: 40
     }
-  },
+  }
 };
 </script>
 
@@ -34,6 +34,7 @@ export default {
   align-items: center;
   justify-content: center;
 }
+
 .text {
   width: 4vw;
   height: 80vh;
