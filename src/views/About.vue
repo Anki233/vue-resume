@@ -8,13 +8,14 @@
 
     <tip text-color="text-danger">Give me a compliment</tip>
     <describe-body class="d-flex align-items-center justify-content-center">
-      <push-button icon-id="icon-dianzan">点赞呀</push-button>
-      <h1>已被点赞300次</h1>
+      <push-button icon-id="icon-dianzan" @click="changePraise()">点赞呀</push-button>
+      <h1>已被点赞{{praise}}次</h1>
     </describe-body>
   </div>
 </template>
 
 <script>
+import { praise, changePraise} from '@/lib/praise-lib.js'
 /**
  * 数据
  */
@@ -45,7 +46,9 @@ export default {
       rowOneArr,
       rowTwoArr,
       rowThreeArr,
-      profileStr
+      profileStr,
+      praise,
+      changePraise
     };
   }
 };

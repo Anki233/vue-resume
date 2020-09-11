@@ -32,14 +32,14 @@
 import infoItem from "./info-item.vue";
 export default {
   components: {
-    infoItem
+    infoItem,
   },
   props: {
     rows: {
       type: Object,
-      default: () => ({})
-    }
-  }
+      default: () => ({}),
+    },
+  },
 };
 </script>
 

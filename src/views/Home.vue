@@ -7,7 +7,7 @@
         <content-head>
           <template #title>{{title}}</template>
           <template #des>{{des}}</template>
-          <template #calc>您已被赞300次</template>
+          <template #calc>您已被赞{{praise}}次</template>
         </content-head>
         <transition enter-active-class="animate__animated animate__zoomIn">
           <router-view></router-view>
@@ -21,6 +21,7 @@
 
 <script>
 import { pathToSign } from "../lib/router-lib.js";
+import { praise} from '@/lib/praise-lib.js'
 import userProfile from "@/components/user-profile/user-profile.vue";
 import slideBar from "@/components/slide-bar/slide-bar.vue";
 import contentHead from "@/components/content-head/content-head.vue";
@@ -36,7 +37,8 @@ export default {
     return {
       src: require("../assets/img/wr-user.jpg"),
       title,
-      des
+      des,
+      praise
     };
   }
 };
